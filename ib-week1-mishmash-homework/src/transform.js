@@ -6,19 +6,54 @@
 
 function groupAdultsByAgeRange(data) { 
     // prepData - data pre-filtered for age < 18
-     prepData = data.filter(
+    let prepData = data.filter(
         (record) => {return record.age >18}
     )
     // start working on prepData array of people > 18
     // I could sort the array by age first to make processing
     // easier later on --- maybe later.
     // console.log(prepData)
-    return prepData.reduce(
+    let results = prepData.reduce(
         function groupByAgeRange(grouped, record){
-            // return grouped
-        },{}
-    ) 
+            if (record.age <=20) {
+                if (!grouped.hasOwnProperty('20 and younger')) {
+                    grouped['20 and younger'] = []
+                } 
+                grouped['20 and younger'].push(record) 
+                return grouped
+
+            }else if (record.age <=30) {
+                if (!grouped.hasOwnProperty('20-30')) {
+                    grouped['20-30'] = []
+                } 
+                grouped['20-30'].push(record) 
+                return grouped
+
+            }else if (record.age <=40) {
+
+            }else if (record.age <=50) {
+
+            }else{
+
+            }
+
+
+                }
+                grouped['20 and younger'].push(record) 
+            } else if (record.age <=30) {
+                 grouped['21-30'].push(record)
+            } else if (record.age <=40) {
+                grouped['31-40'].push(record)
+            } else if (record.age <=50) {
+                grouped['41-50'].push(record)
+            } else {
+                grouped['51 and older'].push(rec0rd)
+            }
+            return grouped
+      
 }
+
+
 
 // Perhaps I could:
 // sort the array by age, and split the resulting array at the first
