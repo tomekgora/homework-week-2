@@ -8,7 +8,7 @@
     // console.log(prepData)
         // prepData - data pre-filtered for age < 18
 
-function groupAdultsByAgeRange(){
+function groupAdultsByAgeRange(data){
     // prepare data by making array of records with age > 18
     const filtered = data.filter(record => record.age > 18)
     // console.log(filtered)
@@ -23,7 +23,6 @@ function groupAdultsByAgeRange(){
                 groupedData['20 and younger'].push(record)
             }
                 
-
             // group 21-30
             if (record.age > 20 && record.age <= 30) {
                 if(!groupedData['21-30']) {
@@ -31,20 +30,36 @@ function groupAdultsByAgeRange(){
                 }                
                 groupedData['21-30'].push(record)
             }
-            // group 31-40
-            if (record.age )
 
-            
+            // group 31-40
+            if (record.age > 30 && record.age <= 40) {
+                if(!groupedData['31-40']) {
+                    groupedData['31-40'] = []
+                }
+                groupedData['31-40'].push(record)
+            }
 
             // group 41-50
-            // group 50 and older
-            
-            console.log(groupedData)
+            if (record.age >40 && record.age <= 50) {
+                if(!groupedData['41-50']) {
+                    groupedData['41-50'] = []
+                }
+                groupedData['41-50'].push(record)
+            }
+
+            //group 51 and older
+            if (record.age > 50) {
+                if(!groupedData['51 and older']) {
+                    groupedData['51 and older'] = []
+                }
+                groupedData['51 and older'].push(record)
+            }            
+            // console.log(groupedData)
             return groupedData
 
         },{} // This is the collector object corresponding to groupedData
-    )
-
+    ) // reduce closed here
+        return result
 } // end of ageSort function
 
 
