@@ -1,13 +1,9 @@
-// use filter to make an array excluding records
-// with age < 18
+// use filter to make an array excluding records with age < 18
 // work only with this new array with reduce()
 
+// prepData - data pre-filtered for age < 18
 
-function groupAdultsByAgeRange(data) {
-    
-    // First filter age > 18
-    // Then sort objects into groups
-    
+function groupAdultsByAgeRange(data) { 
     prepData = data.filter(
         function(record) {
             return record.age
@@ -22,7 +18,7 @@ function groupAdultsByAgeRange(data) {
 
 }
 
-module.exports = groupAdultsByAgeRange
+module.exports = {groupAdultsByAgeRange}
 
 
 // the result is in the form of:

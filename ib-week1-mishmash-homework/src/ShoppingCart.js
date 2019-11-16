@@ -1,7 +1,7 @@
 // Checking my ShoppingCart with node in shopping-run.js
 // Some issues with this implementation:
 //      Adding second item with the same name adds it as 
-//      separate object
+//      separate object instead of changing the quantity
 
 class ShoppingCart {
     constructor() {
