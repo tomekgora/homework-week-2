@@ -2,58 +2,50 @@
 // work only with this new array with reduce()
 
 // at the highest level this function should return an object
-
-
-function groupAdultsByAgeRange(data) { 
-    // prepData - data pre-filtered for age < 18
-     prepData = data.filter(
-        (record) => {return record.age >18}
-    )
     // start working on prepData array of people > 18
     // I could sort the array by age first to make processing
     // easier later on --- maybe later.
     // console.log(prepData)
-    return prepData.reduce(
-        function groupByAgeRange(grouped, record){
-            if (record.age <=20) {
-                if (!grouped.hasOwnProperty('20 and younger')) {
-                    grouped['20 and younger'] = []
-                } 
-                grouped['20 and younger'].push(record) 
-               
+        // prepData - data pre-filtered for age < 18
 
-            }else if (record.age <=30) {
-                if (!grouped.hasOwnProperty('20-30')) {
-                    grouped['20-30'] = []
-                } 
-                grouped['20-30'].push(record) 
-                
+function groupAdultsByAgeRange(){
+    // prepare data by making array of records with age > 18
+    const filtered = data.filter(record => record.age > 18)
+    // console.log(filtered)
 
-            }else if (record.age <=40) {
-                if (!grouped.hasOwnProperty('30-40')) {
-                    grouped['20-30'] = []
-                } 
-                grouped['30-40'].push(record) 
-                
-
-            }else if (record.age <=50) {
-                if (!grouped.hasOwnProperty('40-50')) {
-                    grouped['40-50'] = []
-                } 
-                grouped['40-50'].push(record) 
-                
-
-            }else{
-                if (!grouped.hasOwnProperty('51 and older')) {
-                    grouped['51 and older'] = []
-                } 
-                grouped['51 and older'].push(record) 
-            
+    const result = filtered.reduce(
+        (groupedData, record) => {
+            //group 20 and younger
+            if (record.age <= 20) {
+                if(!groupedData['20 and younger']) {
+                    groupedData['20 and younger'] = []
+                }
+                groupedData['20 and younger'].push(record)
             }
-            return grouped 
+                
 
-        },{})     
-}
+            // group 21-30
+            if (record.age > 20 && record.age <= 30) {
+                if(!groupedData['21-30']) {
+                    groupedData['21-30'] = []
+                }                
+                groupedData['21-30'].push(record)
+            }
+            // group 31-40
+            if (record.age )
+
+            
+
+            // group 41-50
+            // group 50 and older
+            
+            console.log(groupedData)
+            return groupedData
+
+        },{} // This is the collector object corresponding to groupedData
+    )
+
+} // end of ageSort function
 
 
 
