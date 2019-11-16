@@ -29,14 +29,22 @@ class ShoppingCart {
     clear() {
         this.items.length = 0
     }
-    // calculates the total price of items
+    // returns the total cost of shopping in the cart (return was in wrong position)
     total() {
-        this.items.reduce(
-            (total, item) => 
-                total + item.quantity * item.pricePerUnit
-            }
-        )    
+        return this.items.reduce(
+            function(total, item) {
+                return total + item.pricePerUnit*item.quantity
+            }, 0      
+        ) 
     }
+    // calculates the total price of items
+    // total() {
+    //     this.items.reduce(
+    //         (total, item) => 
+    //             total + item.quantity * item.pricePerUnit
+    //         }
+    //     )    
+    // }
 }
 
 
