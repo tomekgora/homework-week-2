@@ -6,27 +6,16 @@
 
 function groupAdultsByAgeRange(data) { 
     // prepData - data pre-filtered for age < 18
-    prepData = data.filter(
+     prepData = data.filter(
         (record) => {return record.age >18}
     )
     // start working on prepData array of people > 18
     // I could sort the array by age first to make processing
     // easier later on --- maybe later.
     // console.log(prepData)
-    result = prepData.reduce(
+    return prepData.reduce(
         function groupByAgeRange(grouped, record){
-            if (record.age <=20) {
-                grouped['20 and younger'].push(record) 
-            } else if (record.age <=30) {
-                 grouped['21-30'].push(record)
-            } else if (record.age <=40) {
-                grouped['31-40'].push(record)
-            } else if (record.age <=50) {
-                grouped['41-50'].push(record)
-            } else {
-                grouped['51 and older'].push(rec0rd)
-            }
-            return grouped
+            // return grouped
         },{}
     ) 
 }
@@ -37,6 +26,18 @@ function groupAdultsByAgeRange(data) {
 //
 
 module.exports = {groupAdultsByAgeRange}
+
+           // if (record.age <=20) {
+            //    return grouped['20 and younger'].push(record) 
+            // } else if (record.age <=30) {
+            //     return grouped['21-30'].push(record)
+            // } else if (record.age <=40) {
+            //   return  grouped['31-40'].push(record)
+            // } else if (record.age <=50) {
+            //   return  grouped['41-50'].push(record)
+            // } else {
+            //   return  grouped['51 and older'].push(rec0rd)
+            // }
 
 
             // let group1 = prepData.filter(
