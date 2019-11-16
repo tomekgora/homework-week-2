@@ -20,37 +20,39 @@ function groupAdultsByAgeRange(data) {
                     grouped['20 and younger'] = []
                 } 
                 grouped['20 and younger'].push(record) 
-                return grouped
+               
 
             }else if (record.age <=30) {
                 if (!grouped.hasOwnProperty('20-30')) {
                     grouped['20-30'] = []
                 } 
                 grouped['20-30'].push(record) 
-                return grouped
+                
 
             }else if (record.age <=40) {
+                if (!grouped.hasOwnProperty('30-40')) {
+                    grouped['20-30'] = []
+                } 
+                grouped['30-40'].push(record) 
+                
 
             }else if (record.age <=50) {
+                if (!grouped.hasOwnProperty('40-50')) {
+                    grouped['40-50'] = []
+                } 
+                grouped['40-50'].push(record) 
+                
 
             }else{
-
+                if (!grouped.hasOwnProperty('51 and older')) {
+                    grouped['51 and older'] = []
+                } 
+                grouped['51 and older'].push(record) 
+            
             }
+            return grouped 
 
-
-                }
-                grouped['20 and younger'].push(record) 
-            } else if (record.age <=30) {
-                 grouped['21-30'].push(record)
-            } else if (record.age <=40) {
-                grouped['31-40'].push(record)
-            } else if (record.age <=50) {
-                grouped['41-50'].push(record)
-            } else {
-                grouped['51 and older'].push(rec0rd)
-            }
-            return grouped
-      
+        },{})     
 }
 
 
