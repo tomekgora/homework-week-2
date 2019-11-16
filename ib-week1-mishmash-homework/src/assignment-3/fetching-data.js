@@ -15,5 +15,4 @@ fetch("https://swapi.co/api/people/1/")
         "<pre>" + JSON.stringify(myJson, null, " ") + "</pre>"
     })
   }
-
-//   document.getElementById('buttonVader').addEventListener("click", getDarthVader());
+//   document.getElementById("buttonVader").addEventListener("click", getDarthVader());
