@@ -5,18 +5,12 @@
 
 function groupAdultsByAgeRange(data) { 
     prepData = data.filter(
-        function(record) {
-            return record.age
-        }
-         
-
+        (record) => {return record.age >18}
     )
 
-
-
-
-
+    
 }
+
 
 module.exports = {groupAdultsByAgeRange}
 
