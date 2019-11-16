@@ -2,16 +2,23 @@
 
 class ShoppingCart {
     constructor() {
-
+        this.items = []
     }
 
 // Mehofs for the class ShoppingCart
-    getItems(){}
-    addItem(){}
+    getItems(){
+        return this.items
+    }
+    // adds an item as object to the items array
+    addItem(itemName, quantity, price){
+
+    }
+    // empties the shopping cart
     clear() {}
+    // calculates the total price of items
     total() {}
 }
 
 
 
-module.exports = 
+module.exports = ShoppingCart
