@@ -11,7 +11,13 @@ class ShoppingCart {
     }
     // adds an item as object to the items array
     addItem(itemName, quantity, price){
-
+        this.items.push(
+            {
+                name: itemName,
+                pricePerUnit: price,
+                quantity: quantity
+            }
+        )
     }
     // empties the shopping cart
     clear() {}
@@ -22,3 +28,12 @@ class ShoppingCart {
 
 
 module.exports = ShoppingCart
+
+
+// The items need to be listed in an array
+// Inside the array every added item is an object {}
+// The object of each item has the following properties
+// name 
+// quantity
+// pricePerUnit
+//
