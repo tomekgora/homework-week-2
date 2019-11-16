@@ -10,7 +10,7 @@
 
 function groupAdultsByAgeRange(data){
     // prepare data by making array of records with age > 18
-    const filtered = data.filter(record => record.age > 18)
+    const filtered = data.filter(record => record.age >= 18)
     // console.log(filtered)
 
     const result = filtered.reduce(
