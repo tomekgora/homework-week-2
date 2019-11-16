@@ -32,13 +32,10 @@ class ShoppingCart {
     // calculates the total price of items
     total() {
         this.items.reduce(
-            (total, item) => {
-                const sum = item.pricePerUnit * item.quantity
-                console.log(total)
-                return sum
+            (total, item) => 
+                total + item.quantity * item.pricePerUnit
             }
-        )
-        
+        )    
     }
 }
 

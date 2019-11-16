@@ -1,3 +1,4 @@
+// for testing out my ShippingCart.js
 
 const ShoppingCart = require("./ShoppingCart");
 
