@@ -20,9 +20,16 @@ class ShoppingCart {
         )
     }
     // empties the shopping cart
-    clear() {}
+    // I use this method since items = [] may produce problems
+    // in later implementations if items is referenced from another
+    // variable and not the original
+    clear() {
+        this.items.length = 0
+    }
     // calculates the total price of items
-    total() {}
+    total() {
+        items.reduce()
+    }
 }
 
 
