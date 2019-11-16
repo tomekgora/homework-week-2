@@ -6,14 +6,14 @@
 
 function groupAdultsByAgeRange(data) { 
     // prepData - data pre-filtered for age < 18
-    let prepData = data.filter(
+     prepData = data.filter(
         (record) => {return record.age >18}
     )
     // start working on prepData array of people > 18
     // I could sort the array by age first to make processing
     // easier later on --- maybe later.
     // console.log(prepData)
-    let results = prepData.reduce(
+    return prepData.reduce(
         function groupByAgeRange(grouped, record){
             if (record.age <=20) {
                 if (!grouped.hasOwnProperty('20 and younger')) {
