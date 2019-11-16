@@ -12,25 +12,26 @@ function groupAdultsByAgeRange(data) {
     // start working on prepData array of people > 18
     // I could sort the array by age first to make processing
     // easier later on --- maybe later.
-
-    return prepData.reduce(
+    // console.log(prepData)
+    result = prepData.reduce(
         function groupByAgeRange(grouped, record){
             if (record.age <=20) {
-               return grouped['20 and younger'].push(record) 
+                grouped['20 and younger'].push(record) 
             } else if (record.age <=30) {
-               return  grouped['21-30'].push(record)
+                 grouped['21-30'].push(record)
             } else if (record.age <=40) {
-               return grouped['31-40'].push(record)
+                grouped['31-40'].push(record)
             } else if (record.age <=50) {
-               return grouped['41-50'].push(record)
+                grouped['41-50'].push(record)
             } else {
-               return grouped['51 and older'].push(rec0rd)
+                grouped['51 and older'].push(rec0rd)
             }
+            return grouped
         },{}
     ) 
 }
 
-// This is not a very elegant way of doing it. Perhaps I could:
+// Perhaps I could:
 // sort the array by age, and split the resulting array at the first
 // instance meeting new condition like age >20, age >30, age >41
 //
